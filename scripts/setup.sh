@@ -59,12 +59,12 @@ setup() {
   NOT_INSTALLED=$(check_exist ctags curl-config git make vim)
   [ ! -z ${NOT_INSTALLED} ] && exit_err "Installer requires '${NOT_INSTALLED}'. Please install and try again."
 
-  VIM_VER=$(vim --version | sed -n 's/^.*IMproved \([^ ]*\).*$/\1/p')
-  if ! verlte '7.4' ${VIM_VER} ; then
-    warn "Detected vim version \"${VIM_VER}\""
-    err "However version 7.4 or later is required. Aborting."
-    exit 1
-  fi
+  #VIM_VER=$(vim --version | sed -n 's/^.*IMproved \([^ ]*\).*$/\1/p')
+  #if ! verlte '7.4' ${VIM_VER} ; then
+  #  warn "Detected vim version \"${VIM_VER}\""
+  #  err "However version 7.4 or later is required. Aborting."
+  #  exit 1
+  #fi
 
   if vim --version | grep -q +ruby 2>&1 ; then
     msg "Testing for broken Ruby interface in vim..."
